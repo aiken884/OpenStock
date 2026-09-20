@@ -41,13 +41,13 @@ const ResetPasswordForm = () => {
 
     useEffect(() => {
         if (error === 'INVALID_TOKEN') {
-            toast.error('Reset link is invalid or expired.');
+            toast.error('重設連結無效或已過期。');
         }
     }, [error]);
 
     const onSubmit = async (data: ResetPasswordFormData) => {
         if (!token) {
-            toast.error('Reset link is invalid or expired.');
+            toast.error('重設連結無效或已過期。');
             return;
         }
 
@@ -58,33 +58,33 @@ const ResetPasswordForm = () => {
             });
 
             if (result.success) {
-                toast.success('Password updated. You can sign in now.');
+                toast.success('密碼已更新，請重新登入。');
                 router.push('/sign-in');
                 return;
             }
 
-            toast.error('Password reset failed', {
-                description: result.error ?? 'Unable to reset your password.',
+            toast.error('重設密碼失敗', {
+                description: result.error ?? '無法重設密碼。',
             });
         } catch (error) {
-            toast.error('Password reset failed', {
-                description: error instanceof Error ? error.message : 'Unable to reset your password.',
+            toast.error('重設密碼失敗', {
+                description: error instanceof Error ? error.message : '無法重設密碼。',
             });
         }
     };
 
     return (
         <>
-            <h1 className="form-title">Choose a new password</h1>
+            <h1 className="form-title">設定新密碼</h1>
             <p className="text-sm text-gray-400 mb-6">
-                Enter a new password for your account.
+                請為你的帳號輸入一組新密碼。
             </p>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                 <InputField
                     name="newPassword"
-                    label="New Password"
-                    placeholder="Enter a new password"
+                    label="新密碼"
+                    placeholder="請輸入新密碼"
                     type="password"
                     register={register}
                     error={errors.newPassword}
@@ -94,23 +94,23 @@ const ResetPasswordForm = () => {
 
                 <InputField
                     name="confirmPassword"
-                    label="Confirm Password"
-                    placeholder="Confirm your new password"
+                    label="確認密碼"
+                    placeholder="請再輸入一次新密碼"
                     type="password"
                     register={register}
                     error={errors.confirmPassword}
                     validation={{
-                        required: 'Please confirm your new password',
+                        required: '請再次確認新密碼',
                         validate: (value: string) =>
-                            value === newPassword || 'Passwords do not match',
+                            value === newPassword || '兩次輸入的密碼不一致',
                     }}
                 />
 
                 <Button type="submit" disabled={isSubmitting} className="yellow-btn w-full mt-5">
-                    {isSubmitting ? 'Resetting password' : 'Reset password'}
+                    {isSubmitting ? '重設中…' : '重設密碼'}
                 </Button>
 
-                <FooterLink text="Need a fresh link?" linkText="Request another one" href="/forgot-password" />
+                <FooterLink text="需要新的連結？" linkText="再寄一次" href="/forgot-password" />
                 <OpenDevSocietyBranding outerClassName="mt-10 flex justify-center" />
             </form>
         </>

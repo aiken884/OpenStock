@@ -14,14 +14,13 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-    title: 'About Us | OpenStock',
-    description: 'The story behind OpenStock and the Open Dev Society.',
+    title: '關於我們 | OpenStock',
+    description: 'OpenStock 與 Open Dev Society 的故事。',
 };
 
 export default function AboutPage() {
     return (
         <div className="max-w-5xl mx-auto pb-20 px-4">
-            {/* Hero Section */}
             <section className="text-center space-y-8 pt-16 mb-20">
                 <div className="flex justify-center mb-6">
                     <div className="p-4 rounded-2xl border border-teal-500/20 backdrop-blur-sm">
@@ -30,49 +29,47 @@ export default function AboutPage() {
                 </div>
 
                 <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-500 tracking-tight">
-                    Tools for Everyone.
+                    給每個人的工具。
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-light">
-                    We believe financial intelligence shouldn't be locked behind paywalls.
-                    OpenStock is built by the community, for the community.
+                    我們相信金融資訊不該被付費牆鎖住。
+                    OpenStock 由社群打造，也為社群而存在。
                 </p>
             </section>
 
-            {/* Mission Grid */}
             <section className="grid md:grid-cols-3 gap-6 mb-24">
                 <FeatureCard
                     icon={<Globe className="text-blue-400" />}
-                    title="Open Access"
-                    desc="No premium tiers for core features. Real-time data and insights available to all, forever."
+                    title="開放取用"
+                    desc="核心功能沒有付費層級。即時資料與洞察對所有人開放，而且一直如此。"
                     color="blue"
                 />
                 <FeatureCard
                     icon={<Code className="text-purple-400" />}
-                    title="Open Source"
-                    desc="Fully transparent codebase. Audit our algorithms, contribute features, and build with us."
+                    title="開源"
+                    desc="程式碼完全公開。你可以檢查演算法、貢獻功能，並一起打造。"
                     color="purple"
                 />
                 <FeatureCard
                     icon={<Heart className="text-red-400" />}
-                    title="Community Driven"
-                    desc="Powered by donations and volunteers. We answer to our users, not shareholders."
+                    title="社群驅動"
+                    desc="靠捐款與志工運作。我們對使用者負責，不是對股東負責。"
                     color="red"
                 />
             </section>
 
-            {/* Story Section */}
             <section className="grid md:grid-cols-2 gap-12 items-center mb-24 bg-gray-900/30 p-8 md:p-12 rounded-3xl border border-gray-800">
                 <div className="space-y-6">
-                    <h2 className="text-3xl font-bold text-white">The Open Dev Society</h2>
+                    <h2 className="text-3xl font-bold text-white">Open Dev Society</h2>
                     <p className="text-gray-400 leading-relaxed text-lg">
-                        OpenStock was born from a simple frustration: why are powerful financial tools so expensive?
+                        OpenStock 來自一個很單純的挫折：為什麼強大的金融工具都這麼貴？
                     </p>
                     <p className="text-gray-400 leading-relaxed text-lg">
-                        We are a collective of developers, designers, and financial enthusiasts working under the <span className="text-teal-400 font-semibold">Open Dev Society</span> banner. Our mission is to democratize software by building high-quality, open-source alternatives to proprietary platforms.
+                        我們是一群開發者、設計師與金融愛好者，在 <span className="text-teal-400 font-semibold">Open Dev Society</span> 的旗幟下合作。使命是做出高品質、開源的替代方案，讓軟體不再被少數平台壟斷。
                     </p>
                     <div className="pt-4">
                         <Link href="https://github.com/Open-Dev-Society" target="_blank" className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 font-medium transition-colors group">
-                            Visit our GitHub <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                            前往 GitHub <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                         </Link>
                     </div>
                 </div>
@@ -86,9 +83,8 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Team / Contributors */}
             <section className="text-center mb-20">
-                <h2 className="text-3xl font-bold text-white mb-10">Backed by Amazing Partners</h2>
+                <h2 className="text-3xl font-bold text-white mb-10">由優秀夥伴支持</h2>
                 <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-80 grayscale hover:grayscale-0 transition-all duration-500">
                     <div className="h-8 w-px bg-gray-700"></div>
                     <Link href="https://www.siray.ai" target="_blank" className="hover:opacity-100 transition-opacity flex items-center gap-2">

@@ -24,12 +24,12 @@ const Layout = async ({ children }: { children : React.ReactNode }) => {
             <section className="auth-right-section">
                 <div className="z-10 relative lg:mt-4 lg:mb-16">
                     <blockquote className="auth-blockquote">
-                        “For me, OpenStock isn’t just another stock app. It’s about giving people clarity and control in the market, without barriers or subscriptions.”
+                        「對我來說，OpenStock 不只是又一個看盤 App，而是讓每個人都能清楚掌握市場，不必被訂閱牆擋住。」
                     </blockquote>
                     <div className="flex items-center justify-between">
                         <div>
-                            <cite className="auth-testimonial-author">- Ravi Pratap Singh (@ravixalgorithm)</cite>
-                            <p className="max-md:text-xs text-gray-500">Founder @opendevsociety</p>
+                            <cite className="auth-testimonial-author">— Ravi Pratap Singh（@ravixalgorithm）</cite>
+                            <p className="max-md:text-xs text-gray-500">Open Dev Society 創辦人</p>
                         </div>
                         <div className="flex items-center gap-0.5">
                             {[1,2,3,4,5].map((star) => (
@@ -39,7 +39,7 @@ const Layout = async ({ children }: { children : React.ReactNode }) => {
                     </div>
                 </div>
                 <div className="flex-1 relative">
-                    <Image src="/assets/images/dashboard.png" alt="Dashboard Preview" width={1440} height={1150} className="auth-dashboard-preview absolute top-0" />
+                    <Image src="/assets/images/dashboard.png" alt="總覽預覽" width={1440} height={1150} className="auth-dashboard-preview absolute top-0" />
                 </div>
             </section>
 

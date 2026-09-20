@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { formatDistanceToNow } from "date-fns";
+import { zhTW } from "date-fns/locale";
 import { ExternalLink } from "lucide-react";
 
 interface NewsGridProps {
@@ -14,7 +15,7 @@ export default function NewsGrid({ news }: NewsGridProps) {
 
     return (
         <div className="mt-8">
-            <h2 className="text-xl font-bold text-white mb-4">Market News</h2>
+            <h2 className="text-xl font-bold text-white mb-4">市場新聞</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {news.map((item, idx) => (
                     <a
@@ -41,7 +42,7 @@ export default function NewsGrid({ news }: NewsGridProps) {
                             <div className="flex items-center justify-between text-[10px] text-gray-600 mt-auto">
                                 <span>{item.source}</span>
                                 <span>
-                                    {item.datetime ? formatDistanceToNow(item.datetime * 1000, { addSuffix: true }) : ''}
+                                    {item.datetime ? formatDistanceToNow(item.datetime * 1000, { addSuffix: true, locale: zhTW }) : ''}
                                 </span>
                             </div>
                         </div>

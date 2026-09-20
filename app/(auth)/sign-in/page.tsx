@@ -32,58 +32,58 @@ const SignIn = () => {
                 router.push('/');
                 return;
             }
-            toast.error('Sign in failed', {
-                description: result.error ?? 'Invalid email or password.',
+            toast.error('登入失敗', {
+                description: result.error ?? '電子郵件或密碼不正確。',
             });
         } catch (e) {
             console.error(e);
-            toast.error('Sign in failed', {
-                description: e instanceof Error ? e.message : 'Failed to sign in.'
+            toast.error('登入失敗', {
+                description: e instanceof Error ? e.message : '無法登入。'
             })
         }
     }
 
     return (
         <>
-            <h1 className="form-title">Welcome back</h1>
+            <h1 className="form-title">歡迎回來</h1>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                 <InputField
                     name="email"
-                    label="Email"
-                    placeholder="opendevsociety@cc.cc"
+                    label="電子郵件"
+                    placeholder="you@example.com"
                     register={register}
                     error={errors.email}
                     validation={{
-                        required: 'Email is required',
+                        required: '請輸入電子郵件',
                         pattern: {
                             value: /^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/,
-                            message: 'Please enter a valid email address'
+                            message: '請輸入有效的電子郵件地址'
                         }
                     }}
                 />
 
                 <InputField
                     name="password"
-                    label="Password"
-                    placeholder="Enter your password"
+                    label="密碼"
+                    placeholder="請輸入密碼"
                     type="password"
                     register={register}
                     error={errors.password}
-                    validation={{ required: 'Password is required', minLength: 8 }}
+                    validation={{ required: '請輸入密碼', minLength: 8 }}
                 />
 
                 <div className="flex justify-end">
                     <Link href="/forgot-password" className="footer-link text-sm">
-                        Forgot password?
+                        忘記密碼？
                     </Link>
                 </div>
 
                 <Button type="submit" disabled={isSubmitting} className="yellow-btn w-full mt-5">
-                    {isSubmitting ? 'Signing In' : 'Sign In'}
+                    {isSubmitting ? '登入中…' : '登入'}
                 </Button>
 
-                <FooterLink text="Don't have an account?" linkText="Create an account" href="/sign-up" />
+                <FooterLink text="還沒有帳號？" linkText="建立帳號" href="/sign-up" />
                 <OpenDevSocietyBranding outerClassName="mt-10 flex justify-center" />
                 <div className="mt-5 flex justify-center">
                     <a href="https://peerlist.io/ravixalgorithm/project/openstock" target="_blank" rel="noreferrer">

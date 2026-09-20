@@ -36,7 +36,7 @@ describe('normalizeSourceInsight', () => {
         expect(reddit).toMatchObject({
             label: 'Reddit',
             companyName: null,
-            metricLabel: 'Mentions',
+            metricLabel: '提及數',
             metricValue: 647,
             buzzScore: 81.2,
             bullishPct: 46,
@@ -44,7 +44,7 @@ describe('normalizeSourceInsight', () => {
         expect(polymarket).toMatchObject({
             label: 'Polymarket',
             companyName: null,
-            metricLabel: 'Trades',
+            metricLabel: '成交筆數',
             metricValue: 3731,
             buzzScore: 55.7,
             bullishPct: 72,
@@ -90,7 +90,7 @@ describe('buildStockSentimentInsights', () => {
                 buzzScore: 74.1,
                 bullishPct: 31,
                 trend: 'rising',
-                metricLabel: 'Mentions',
+                metricLabel: '提及數',
                 metricValue: 647,
             },
             {
@@ -100,7 +100,7 @@ describe('buildStockSentimentInsights', () => {
                 buzzScore: 86.1,
                 bullishPct: 56,
                 trend: 'falling',
-                metricLabel: 'Mentions',
+                metricLabel: '提及數',
                 metricValue: 2650,
             },
             {
@@ -110,7 +110,7 @@ describe('buildStockSentimentInsights', () => {
                 buzzScore: 83.3,
                 bullishPct: 30,
                 trend: 'falling',
-                metricLabel: 'Trades',
+                metricLabel: '成交筆數',
                 metricValue: 3731,
             },
             null,

@@ -19,6 +19,9 @@
 
 # production
 /build
+/release
+/build-resources
+/OpenStock.app
 
 # misc
 .DS_Store

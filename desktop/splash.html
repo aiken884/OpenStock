@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8" />
+  <title>OpenStock</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #0a0a0a;
+      color: #e5e7eb;
+      font-family: "PingFang TC", "Hiragino Sans CNS", "Noto Sans TC", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .box { text-align: center; padding: 32px; }
+    h1 { font-size: 28px; margin: 0 0 8px; color: #fff; }
+    p { margin: 0; color: #9ca3af; font-size: 14px; }
+    .dot {
+      width: 8px; height: 8px; border-radius: 999px;
+      background: #14b8a6; margin: 20px auto 0;
+      animation: pulse 1.2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>OpenStock</h1>
+    <p>正在啟動本機服務與資料庫…</p>
+    <div class="dot"></div>
+  </div>
+</body>
+</html>

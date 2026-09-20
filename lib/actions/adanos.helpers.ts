@@ -18,25 +18,25 @@ export const SOURCE_CONFIG = {
     reddit: {
         label: 'Reddit',
         path: '/reddit/stocks/v1/compare',
-        metricLabel: 'Mentions',
+        metricLabel: '提及數',
         metricField: 'mentions',
     },
     x: {
         label: 'X.com',
         path: '/x/stocks/v1/compare',
-        metricLabel: 'Mentions',
+        metricLabel: '提及數',
         metricField: 'mentions',
     },
     news: {
-        label: 'News',
+        label: '新聞',
         path: '/news/stocks/v1/compare',
-        metricLabel: 'Mentions',
+        metricLabel: '提及數',
         metricField: 'mentions',
     },
     polymarket: {
         label: 'Polymarket',
         path: '/polymarket/stocks/v1/compare',
-        metricLabel: 'Trades',
+        metricLabel: '成交筆數',
         metricField: 'trade_count',
     },
 } as const satisfies Record<

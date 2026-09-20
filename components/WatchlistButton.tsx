@@ -27,7 +27,7 @@ const WatchlistButton = ({
 
     const label = useMemo(() => {
         if (type === "icon") return added ? "" : "";
-        return added ? "Remove from Watchlist" : "Add to Watchlist";
+        return added ? "從自選股移除" : "加入自選股";
     }, [added, type]);
 
     const handleClick = async (e: React.MouseEvent) => {
@@ -35,7 +35,7 @@ const WatchlistButton = ({
 
         if (!userId && !onWatchlistChange) {
             console.error("WatchlistButton: userId or onWatchlistChange is required");
-            toast.error("Please sign in to modify watchlist");
+            toast.error("請先登入才能編輯自選股");
             return;
         }
 
@@ -47,10 +47,10 @@ const WatchlistButton = ({
             if (userId) {
                 if (next) {
                     await addToWatchlist(userId, symbol, company);
-                    toast.success(`${symbol} added to watchlist`);
+                    toast.success(`已將 ${symbol} 加入自選股`);
                 } else {
                     await removeFromWatchlist(userId, symbol);
-                    toast.success(`${symbol} removed from watchlist`);
+                    toast.success(`已將 ${symbol} 自自選股移除`);
                 }
             }
 
@@ -59,7 +59,7 @@ const WatchlistButton = ({
         } catch (error) {
             console.error("Watchlist action failed:", error);
             setAdded(!next); // Revert on error
-            toast.error("Failed to update watchlist");
+            toast.error("更新自選股失敗");
         } finally {
             setLoading(false);
         }
@@ -69,8 +69,8 @@ const WatchlistButton = ({
         return (
             <button
                 type="button"
-                title={added ? `Remove ${symbol} from watchlist` : `Add ${symbol} to watchlist`}
-                aria-label={added ? `Remove ${symbol} from watchlist` : `Add ${symbol} to watchlist`}
+                title={added ? `將 ${symbol} 自自選股移除` : `將 ${symbol} 加入自選股`}
+                aria-label={added ? `將 ${symbol} 自自選股移除` : `將 ${symbol} 加入自選股`}
                 className={`flex items-center justify-center p-2 rounded-full transition-all ${added ? "text-yellow-400 hover:bg-yellow-400/10" : "text-gray-400 hover:text-white hover:bg-white/10"} ${loading ? "opacity-50 cursor-wait" : ""}`}
                 onClick={handleClick}
                 disabled={loading}
@@ -112,7 +112,7 @@ const WatchlistButton = ({
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 7h12M9 7V5a1 1 0 011-1h4a1 1 0 011 1v2m-7 4v6m4-6v6m4-6v6" />
                 </svg>
             ) : null}
-            <span>{loading ? "Updating..." : label}</span>
+            <span>{loading ? "更新中…" : label}</span>
         </button>
     );
 };

@@ -18,7 +18,7 @@ const SelectField = ({name, label, placeholder, options, control, error, require
                 name={name}
                 control={control}
                 rules={{
-                    required: required ? `Please select ${label.toLowerCase()}`:false,
+                    required: required ? `請選擇${label}` : false,
                 }}
                 render={({field}) => (
                     <Select value={field.value} onValueChange={field.onChange}>

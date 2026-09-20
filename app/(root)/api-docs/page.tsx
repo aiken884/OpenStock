@@ -17,14 +17,13 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: 'API & Architecture | OpenStock',
-  description: 'Technical documentation for OpenStock architecture, AI integrations, and background jobs.',
+  title: 'API 與架構 | OpenStock',
+  description: 'OpenStock 架構、AI 整合與背景工作的技術說明。',
 };
 
 export default function ApiDocsPage() {
   return (
     <div className="max-w-5xl mx-auto space-y-16 pb-20">
-      {/* Hero Section */}
       <section className="text-center space-y-6 pt-10">
         <div className="flex justify-center items-center gap-4 mb-8">
           <div className="bg-gray-800 p-3 rounded-2xl border border-gray-700 shadow-xl">
@@ -37,29 +36,27 @@ export default function ApiDocsPage() {
         </div>
 
         <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
-          OpenStock Architecture
+          OpenStock 架構
         </h1>
         <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-          A transparent look at the event-driven, multi-provider system powering your market insights.
+          透明說明驅動市場洞察的事件導向、多供應商系統。
         </p>
 
         <div className="flex flex-wrap justify-center gap-3 pt-2">
-          <Badge color="green">v1.0.0 Active</Badge>
+          <Badge color="green">v1.0.0 運作中</Badge>
           <Badge color="purple">Gemini + Siray AI</Badge>
-          <Badge color="blue">Open Source AGPL-3.0</Badge>
+          <Badge color="blue">開源 AGPL-3.0</Badge>
         </div>
       </section>
 
-      {/* AI Architecture Section */}
       <section className="grid md:grid-cols-2 gap-8 items-start">
         <div className="space-y-6">
           <div className="flex items-center gap-3">
             <Cpu className="text-teal-400 h-8 w-8" />
-            <h2 className="text-3xl font-bold text-gray-100">Intelligent UI</h2>
+            <h2 className="text-3xl font-bold text-gray-100">智慧介面</h2>
           </div>
           <p className="text-gray-400 leading-relaxed">
-            We prioritize uptime for generative features (Welcome Emails, News Summaries) using a robust
-            multi-provider strategy. Our system automatically routes around outages.
+            歡迎信、新聞摘要等生成功能優先追求穩定。系統會自動繞過中斷的供應商。
           </p>
 
           <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 space-y-4">
@@ -69,11 +66,11 @@ export default function ApiDocsPage() {
               </div>
               <div>
                 <h3 className="text-white font-semibold flex items-center gap-2">
-                  Primary: Google Gemini
+                  主要：Google Gemini
                   <span className="text-[10px] bg-teal-500/10 text-teal-400 px-2 py-0.5 rounded-full border border-teal-500/20">Flash Lite 2.5</span>
                 </h3>
                 <p className="text-sm text-gray-500 mt-1">
-                  Handles high-volume inference for news summarization and personalization.
+                  負責新聞摘要與個人化等高量推論。
                 </p>
               </div>
             </div>
@@ -86,37 +83,35 @@ export default function ApiDocsPage() {
               </div>
               <div>
                 <h3 className="text-white font-semibold flex items-center gap-2">
-                  Fallback: Siray.ai
+                  備援：Siray.ai
                   <span className="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded-full border border-blue-500/20">Ultra 1.0</span>
                 </h3>
                 <p className="text-sm text-gray-500 mt-1">
-                  Instant failover protection. If Gemini wavers, Siray takes over to ensure zero dropped requests.
+                  Gemini 不穩時立刻接手，避免請求中斷。
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Diagram / Visual */}
         <div className="bg-[#0A0A0A] border border-gray-800 rounded-xl p-8 flex flex-col justify-center items-center relative overflow-hidden group">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-teal-900/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-          {/* Visual Flowchart */}
           <div className="relative z-10 flex flex-col items-center gap-6 w-full max-w-sm">
             <div className="bg-gray-800 text-gray-300 px-4 py-2 rounded-lg text-sm border border-gray-700 w-full text-center">
-              User Action / Cron Job
+              使用者操作／排程工作
             </div>
             <div className="h-6 w-px bg-gray-700" />
             <div className="bg-gray-800 p-4 rounded-xl border border-gray-600 w-full flex flex-col gap-3 relative shadow-2xl">
               <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-1 h-12 bg-teal-500 rounded-full" />
-              <span className="text-xs font-mono text-teal-500 mb-1">Inngest Function</span>
+              <span className="text-xs font-mono text-teal-500 mb-1">Inngest 函式</span>
               <div className="flex items-center justify-between text-sm text-gray-200 bg-black/40 p-2 rounded border border-gray-700">
-                <span>Attempt Gemini</span>
+                <span>嘗試 Gemini</span>
                 <CheckCircle2 size={14} className="text-teal-500" />
               </div>
               <div className="flex items-center justify-between text-sm text-gray-200 bg-blue-900/20 p-2 rounded border border-blue-800/50">
                 <span className="flex items-center gap-2">
-                  Fallback to Siray
+                  改走 Siray
                   <ShieldCheck size={12} className="text-blue-400" />
                 </span>
                 <ArrowRight size={14} className="text-blue-400" />
@@ -124,72 +119,70 @@ export default function ApiDocsPage() {
             </div>
             <div className="h-6 w-px bg-gray-700" />
             <div className="bg-green-900/20 text-green-400 px-4 py-2 rounded-lg text-sm border border-green-900/50 w-full text-center font-medium">
-              Content Delivered
+              內容已送達
             </div>
           </div>
         </div>
       </section>
 
-      {/* Background Jobs */}
       <section>
         <div className="flex items-center gap-3 mb-6">
           <Server className="text-purple-400 h-8 w-8" />
-          <h2 className="text-3xl font-bold text-gray-100">Serverless Infrastructure</h2>
+          <h2 className="text-3xl font-bold text-gray-100">無伺服器基礎建設</h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           <JobCard
             icon={<Mail size={20} />}
-            title="Sign Up Email"
-            trigger="Event"
-            desc="Generates personalized welcome/onboarding email via AI."
+            title="註冊信件"
+            trigger="事件"
+            desc="用 AI 產生個人化歡迎／引導信件。"
             color="purple"
           />
           <JobCard
             icon={<BarChart2 size={20} />}
-            title="Weekly News"
-            trigger="Cron: Mon 9am"
-            desc="Summarizes market news and broadcasts via ConvertKit."
+            title="每週新聞"
+            trigger="排程：週一 9:00"
+            desc="摘要市場新聞並透過 ConvertKit 寄出。"
             color="teal"
           />
           <JobCard
             icon={<Clock size={20} />}
-            title="Stock Alerts"
-            trigger="Cron: 5m"
-            desc="Checks user price targets against real-time data."
+            title="股價警示"
+            trigger="排程：每 5 分鐘"
+            desc="比對使用者目標價與即時行情。"
             color="yellow"
           />
           <JobCard
             icon={<AlertTriangle size={20} />}
-            title="Re-engagement"
-            trigger="Cron: Daily"
-            desc="Identifies dormant users and sends nudges."
+            title="再互動"
+            trigger="排程：每日"
+            desc="找出久未使用的使用者並寄出提醒。"
             color="red"
           />
         </div>
       </section>
 
-      {/* Integration Stack */}
       <section className="space-y-6">
         <div className="flex items-center gap-3">
           <Database className="text-blue-400 h-8 w-8" />
-          <h2 className="text-3xl font-bold text-gray-100">Tech Stack & Data</h2>
+          <h2 className="text-3xl font-bold text-gray-100">技術堆疊與資料</h2>
         </div>
 
         <div className="grid gap-4">
           <StackItem
             title="Finnhub"
-            desc="Real-time quotes, technical indicators, and market news."
+            desc="即時報價、技術指標與市場新聞。"
             url="https://finnhub.io"
           />
           <StackItem
-            title="ConvertKit (Kit)"
-            desc="High-volume newsletter broadcasts and user tagging."
+            title="ConvertKit（Kit）"
+            desc="大量電子報寄送與使用者標籤。"
             url="https://kit.com"
           />
           <StackItem
             title="MongoDB Atlas"
-            desc="Distributed data on AWS. SRV-bypassed connection for maximum reliability."
+            desc="跑在 AWS 上的分散式資料。以避開 SRV 的連線提高穩定度。"
             url="https://mongodb.com"
           />
         </div>
@@ -198,8 +191,6 @@ export default function ApiDocsPage() {
     </div>
   );
 }
-
-// Helper Components
 
 function Badge({ children, color }: { children: React.ReactNode, color: 'green' | 'purple' | 'blue' }) {
   const colors = {

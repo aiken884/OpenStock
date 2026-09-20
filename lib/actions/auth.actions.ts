@@ -25,7 +25,7 @@ export const signUpWithEmail = async ({ email, password, fullName, country, inve
         return { success: true, data: response }
     } catch (e) {
         console.log('Sign up failed', e)
-        return { success: false, error: 'Sign up failed' }
+        return { success: false, error: '註冊失敗' }
     }
 }
 
@@ -54,13 +54,13 @@ export const signInWithEmail = async ({ email, password }: SignInFormData) => {
         return { success: true, data: response }
     } catch (e) {
         console.log('Sign in failed', e)
-        return { success: false, error: 'Sign in failed' }
+        return { success: false, error: '登入失敗' }
     }
 }
 
 export const requestPasswordResetEmail = async ({ email }: { email: string }) => {
     if (!process.env.NODEMAILER_EMAIL || !process.env.NODEMAILER_PASSWORD) {
-        return { success: false, error: 'Password reset email is not configured.' }
+        return { success: false, error: '尚未設定密碼重設郵件。' }
     }
 
     try {
@@ -72,7 +72,7 @@ export const requestPasswordResetEmail = async ({ email }: { email: string }) =>
         if (!baseUrl) {
             return {
                 success: false,
-                error: 'BETTER_AUTH_URL must be configured before password reset emails can be sent.',
+                error: '必須先設定 BETTER_AUTH_URL 才能寄送密碼重設信。',
             }
         }
 
@@ -86,7 +86,7 @@ export const requestPasswordResetEmail = async ({ email }: { email: string }) =>
         return { success: true }
     } catch (e) {
         console.log('Password reset request failed', e)
-        return { success: false, error: 'Unable to send password reset email.' }
+        return { success: false, error: '無法寄送密碼重設信。' }
     }
 }
 
@@ -104,7 +104,7 @@ export const resetPasswordWithToken = async (
         return { success: true }
     } catch (e) {
         console.log('Password reset failed', e)
-        return { success: false, error: 'Reset link is invalid or expired.' }
+        return { success: false, error: '重設連結無效或已過期。' }
     }
 }
 
@@ -113,7 +113,7 @@ export const signOut = async () => {
         await auth.api.signOut({ headers: await headers() });
     } catch (e) {
         console.log('Sign out failed', e)
-        return { success: false, error: 'Sign out failed' }
+        return { success: false, error: '登出失敗' }
     }
 }
 
