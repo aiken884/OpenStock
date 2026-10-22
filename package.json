@@ -114,5 +114,13 @@
     "sharp@0.35.5": true,
     "unrs-resolver@1.11.1": true,
     "protobufjs@7.6.6": true
+  },
+  "overrides": {
+    "minimatch@3": {
+      "brace-expansion": "1.1.21"
+    },
+    "next": {
+      "postcss": "8.5.31"
+    }
   }
 }
